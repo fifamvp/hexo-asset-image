@@ -6,7 +6,7 @@ Give asset image in hexo a absolutely path automatically
 # Usege
 
 ```shell
-npm install hexo-asset-image --save
+npm install https://github.com/fifamvp/hexo-asset-image --save
 ```
 
 # Example
@@ -21,7 +21,9 @@ MacGesture2-Publish.md
 
 Make sure `post_asset_folder: true` in your `_config.yml`.
 
-Just use `![logo](logo.jpg)` to insert `logo.jpg`.
+Just use `![](title/logo.jpg)` to insert `logo.jpg`.
+
+Note : Must be '/'
 
 # History
 
