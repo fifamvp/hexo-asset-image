@@ -11,6 +11,8 @@ hexo.extend.filter.register('after_post_render', function(data){
   if(config.post_asset_folder){
     var link = data.permalink;
     var beginPos = getPosition(link, '/', 3) + 1;
+    console.info&&console.info("link is " + link);
+    console.info&&console.info("beginPos is " + beginPos);
     var appendLink = '';
     // In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html".
     // if not with index.html endpos = link.lastIndexOf('.') + 1 support hexo-abbrlink
@@ -23,6 +25,7 @@ hexo.extend.filter.register('after_post_render', function(data){
     else {
       var endPos = link.length-1;
     }
+    console.info&&console.info("endPos is " + endPos);
     link = link.substring(beginPos, endPos) + '/' + appendLink;
 
     var toprocess = ['excerpt', 'more', 'content'];
@@ -56,7 +59,7 @@ hexo.extend.filter.register('after_post_render', function(data){
             src = srcArray.join('/');
 
             $(this).attr('src', config.root + link + src);
-            console.info&&console.info("update link as:-->"+config.root + link + src);
+            console.info&&console.info("update link as:-->" + config.root + link + src);
           }
         }else{
           console.info&&console.info("no src attr, skipped...");
